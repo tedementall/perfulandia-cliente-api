@@ -5,6 +5,16 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
+		<version>3.4.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.personas</groupId>
+	<artifactId>personas-api-spring-boot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>personas-api-spring-boot</name>
+	<description>Demo project for Spring Boot</description>
+=======
 		<version>3.5.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
@@ -13,6 +23,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>perfulandia-cliente-api</name>
 	<description>Microservicio que gestiona la información de los clientes</description>
+>>>>>>> c4726fd38d63345132b8ec3515e07cf5cfcb47e5
 	<url/>
 	<licenses>
 		<license/>
@@ -32,6 +43,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
+=======
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
@@ -44,11 +57,50 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+>>>>>>> c4726fd38d63345132b8ec3515e07cf5cfcb47e5
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version> <!-- O la última disponible -->
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JPA / Hibernate -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- MySQL Connector -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+
+		<!-- Springdoc OpenAPI con Swagger UI -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+=======
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
@@ -73,11 +125,16 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+>>>>>>> c4726fd38d63345132b8ec3515e07cf5cfcb47e5
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
+<<<<<<< HEAD
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+=======
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -100,6 +157,7 @@
 						</exclude>
 					</excludes>
 				</configuration>
+>>>>>>> c4726fd38d63345132b8ec3515e07cf5cfcb47e5
 			</plugin>
 		</plugins>
 	</build>
