@@ -1,9 +1,13 @@
 package com.clientes.dto;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import lombok.Data;
 
 @Data
-public class ClienteDTO {
+@AllArgsConstructor
+@NoArgsConstructor
+public class ClienteDTO extends RepresentationModel<ClienteDTO> {
     private Integer idCliente;
     private Integer idUsuario;
     private String nombreCompleto;

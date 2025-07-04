@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 import java.util.List;
 
 @RestController
@@ -44,5 +47,30 @@ public class ClienteController {
         return service.eliminar(id)
                 ? ResponseEntity.noContent().build()
                 : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/hateoas/{id}")
+    public ClienteDTO obtenerHATEOAS(@PathVariable Integer id) {
+        ClienteDTO dto = service.obtenerPorId(id);
+        
+        dto.add(Link.of("http://localhost:8888/api/proxy/clientes" + dto.getId()).withSelfRel());
+        dto.add(Link.of("http://localhost:8888/api/proxy/clientes" + dto.getId()).withRel("Modificar HATEOAS").withType("PUT"));
+        dto.add(Link.of("http://localhost:8888/api/proxy/clientes" + dto.getId()).withRel("Eliminar HATEOAS").withType("DELETE"));
+
+        return dto;
+    }
+
+    //METODO HATEOAS para listar todos los productos utilizando HATEOAS
+    @GetMapping("/hateoas")
+    public List<ClienteDTO> obtenerTodosHATEOAS() {
+        List<ClienteDTO> lista = service.listar();
+
+        for (ClienteDTO dto : lista) {
+            
+            dto.add(Link.of("http://localhost:8888/api/proxy/clientes").withRel("Get todos HATEOAS"));
+            dto.add(Link.of("http://localhost:8888/api/proxy/clientes" + dto.getId()).withRel("Crear HATEOAS").withType("POST"));
+        }
+
+        return lista;
     }
 }
